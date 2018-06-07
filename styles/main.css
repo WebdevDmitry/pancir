@@ -17,6 +17,30 @@ header {
     background-attachment: fixed;
 }
 
+.main-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-30%);
+    text-align: center;
+}
+
+h1 {
+    color: rgb(71, 20, 255);
+    font-weight: 900;
+    font-size: 70px;
+}
+
+h2 {
+    color: #800080;
+    margin: 0;
+    padding: 0;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
 .content {
     width: 90%;
     margin: 4em auto;
@@ -37,6 +61,7 @@ header {
 nav {
     position: fixed;
     width: 100%;
+    z-index:200;
 }
 
 nav ul {
@@ -63,6 +88,35 @@ nav ul li a {
     text-decoration: none;
     color:  #800080;
     font-size: 20px;
+}
+
+.phone {
+    color: rgb(71, 20, 255);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.header-links::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #800080;
+    transition: width .3s;
+}
+
+.header-links-white::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width .3s;
+}
+
+.header-links:hover::after, .header-links-white:hover::after {
+    width: 100%;
+    transition: width .3s;
 }
 
 .menu-icon {
@@ -118,6 +172,15 @@ nav ul li a {
 
     .content {
         font-size: 16px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
     }
 
 }
