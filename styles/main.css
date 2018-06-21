@@ -17,30 +17,6 @@ header {
     background-attachment: fixed;
 }
 
-.main-text {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-30%);
-    text-align: center;
-}
-
-h1 {
-    color: rgb(71, 20, 255);
-    font-weight: 900;
-    font-size: 70px;
-}
-
-h2 {
-    color: #800080;
-    margin: 0;
-    padding: 0;
-    margin-top: 30px;
-    font-size: 30px;
-    font-weight: 400;
-    letter-spacing: 3px;
-}
-
 .content {
     width: 90%;
     margin: 4em auto;
@@ -90,12 +66,6 @@ nav ul li a {
     font-size: 20px;
 }
 
-.phone {
-    color: rgb(71, 20, 255);
-    font-weight: bold;
-    font-size: 20px;
-}
-
 .header-links::after {
     content: "";
     display: block;
@@ -132,6 +102,54 @@ nav ul li a {
 
 .scrolled {
     color: #fff;
+}
+
+.img-mainlogo {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20%);
+    width: 400px;
+}
+
+.offer-container {
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-90%);
+}
+
+.offer {
+    width: 300px;
+    height: 100%;
+    margin: 0 40px;
+    padding: 0 10px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    text-align: center;
+    background-color: #fff;
+    opacity: 0.8;
+    border: 0;
+    border-radius: 20px;
+}
+
+.offer-icon {
+    color: #800080;
+    font-size: 40px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.offer-text {
+    margin-top: -20px;
+    line-height: 20px;
 }
 
 @media(max-width: 900px) {
