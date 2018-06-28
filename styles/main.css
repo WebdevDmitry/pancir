@@ -12,24 +12,13 @@ body {
 header {
     width: 100%;
     height: 100vh;
-    background: url(/BG.jpg) no-repeat 50% 50%;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.content {
-    width: 90%;
-    margin: 4em auto;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: justify;
 }
 
 .logo {
     position: fixed;
     float: left;
     margin: 16px 36px;
-    color: #800080;
+    color: hsla(300, 100%, 25.1%, 1);
     font-weight: bold;
     font-size: 26px;
 }
@@ -37,7 +26,10 @@ header {
 nav {
     position: fixed;
     width: 100%;
-    z-index:200;
+    z-index: 200;
+    border-top: hsla(300, 100%, 25.1%, 1) 6px solid;
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+    background-image: url(./images/trianglify.svg);
 }
 
 nav ul {
@@ -51,18 +43,16 @@ nav ul {
     transition: 1s;
 }
 
-nav.black ul {
-    background: #800080;
-}
+
 
 nav ul li {
     display: inline-block;
-    padding: 20px;
+    padding: 20px 20px 0;
 }
 
 nav ul li a {
     text-decoration: none;
-    color:  #800080;
+    color:  hsla(300, 100%, 25.1%, 1);
     font-size: 20px;
 }
 
@@ -70,28 +60,20 @@ nav ul li a {
     content: "";
     display: block;
     width: 0;
-    height: 2px;
-    background: #800080;
+    margin-top: 20px;
+    height: 4px;
+    background: hsla(300, 100%, 25.1%, 1);
     transition: width .3s;
 }
 
-.header-links-white::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: width .3s;
-}
-
-.header-links:hover::after, .header-links-white:hover::after {
+.header-links:hover::after {
     width: 100%;
     transition: width .3s;
 }
 
 .menu-icon {
     width: 100%;
-    background: #800080;
+    background: hsla(300, 100%, 25.1%, 1);
     text-align: right;
     box-sizing: border-box;
     padding: 15px 24px;
@@ -100,16 +82,53 @@ nav ul li a {
     display: none;
 }
 
-.scrolled {
-    color: #fff;
+.order-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: transition(-50%, -50%);
+    background: linear-gradient(45deg, hsl(209.5, 100%, 30%), hsl(209.5, 100%, 60%));
+    background-size: 200% 200%;
+    color: hsl(209.5, 100%, 95%); 
+    width: 200px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-transform: uppercase;
+    -webkit-animation: blinkbutton 2s ease infinite;
+    -moz-animation: blinkbutton 2s ease infinite;
+    animation: blinkbutton 2s ease infinite;
+  }
+
+.order-button:hover {
+    transition: 0.3s;
+    transform: scale(1.05);
 }
 
-.img-mainlogo {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-20%);
-    width: 400px;
+@-webkit-keyframes blinkbutton {
+    0%{background-position:0% 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0% 52%}
+}
+@-moz-keyframes blinkbutton {
+    0%{background-position:0% 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0% 52%}
+}
+@keyframes blinkbutton { 
+    0%{background-position:0% 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0% 52%}
 }
 
 .offer-container {
@@ -124,33 +143,55 @@ nav ul li a {
 
 .offer {
     width: 300px;
-    height: 100%;
+    height: 240px;
     margin: 0 40px;
-    padding: 0 10px;
-    padding-bottom: 20px;
+    padding: 0 15px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: flex-start;
-    align-content: flex-start;
     text-align: center;
     background-color: #fff;
-    opacity: 0.8;
-    border: 0;
+    border-top: hsla(0, 0%, 0%, 0.2) 1px solid;
     border-radius: 20px;
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .offer-icon {
-    color: #800080;
-    font-size: 40px;
-    width: 100%;
-    margin-top: 20px;
+    color: hsla(300, 100%, 25.1%, 1);
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 50%;
+    background-color: hsla(300, 100%, 25.1%, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .offer-text {
     margin-top: -20px;
-    line-height: 20px;
+    line-height: 24px;
+    color: hsla(0, 0%, 34.5%, 0.8);
+    font-size: 16px;
 }
+
+.offer-text-main {
+    font-weight: 900;
+    font-size: 18px;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.content {
+    width: 90%;
+    margin: 4em auto;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+}
+
 
 @media(max-width: 900px) {
     .logo {
@@ -162,11 +203,11 @@ nav ul li a {
 
     nav ul {
         max-height: 0px;
-        background: #800080;
+        background: hsla(300, 100%, 25.1%, 1);
     }
 
     nav.black ul {
-        background: #800080;
+        background: hsla(300, 100%, 25.1%, 1);
     }
 
     .showing {
@@ -176,12 +217,12 @@ nav ul li a {
     nav ul li {
         box-sizing: border-box;
         width: 100%;
-        padding: 24px 0;
+        padding: 10px 0;
         text-align: center;
     }
 
     nav ul li a {
-        color: #fff;
+        color: hsla(300, 100%, 90%, 1);
     }
 
     .menu-icon {
